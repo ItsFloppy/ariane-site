@@ -1,67 +1,140 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ariane, confidentialité</title>
-    <meta name="description" content="Politique de confidentialité de l'application Ariane." />
+    <title>Ariane, privacy</title>
+    <meta name="description" content="Privacy policy of the Ariane app." />
     <link rel="icon" href="img/icon.png" />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      // Same rule as the app: French when the browser's first language is
+      // French, English otherwise. ?lang=fr|en (the app's links, the footer
+      // switch) wins.
+      (function () {
+        var asked = new URLSearchParams(location.search).get('lang');
+        var first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        var lang = asked === 'fr' || asked === 'en' ? asked : /^fr\b/i.test(first) ? 'fr' : 'en';
+        document.documentElement.lang = lang;
+        if (lang === 'fr') document.title = 'Ariane, confidentialité';
+      })();
+    </script>
   </head>
   <body>
     <main>
-      <header>
-        <img src="img/icon.png" alt="" />
-        <div>
-          <h1>Confidentialité</h1>
-          <p class="tagline">Tes fils restent chez toi</p>
-        </div>
-      </header>
+      <div lang="en">
+        <header>
+          <img src="img/icon.png" alt="" />
+          <div>
+            <h1>Privacy</h1>
+            <p class="tagline">Your threads stay with you</p>
+          </div>
+        </header>
 
-      <section class="card">
-        <h2>Ariane ne collecte aucune donnée</h2>
-        <p>
-          Toutes les informations saisies dans l'application (appareils, schémas, critères,
-          réglages) sont stockées exclusivement sur ton téléphone et ne le quittent jamais.
-        </p>
-        <p>
-          Elles sont chiffrées en AES-256-GCM par le système iOS. La clé de chiffrement est
-          gardée dans le trousseau sécurisé de l'iPhone.
-        </p>
-      </section>
+        <section class="card">
+          <h2>Ariane collects no data</h2>
+          <p>
+            All the information entered in the app (devices, patterns, criteria, settings)
+            is stored exclusively on your phone and never leaves it.
+          </p>
+          <p>
+            It is encrypted with AES-256-GCM by the iOS system. The encryption key is kept in
+            the iPhone's secure Keychain.
+          </p>
+        </section>
 
-      <section class="card">
-        <h2>Aucun service tiers</h2>
-        <p>
-          L'application ne contient ni compte utilisateur, ni publicité, ni outil d'analyse
-          ou de mesure d'audience, ni service tiers. Elle n'effectue aucune requête réseau.
-        </p>
-      </section>
+        <section class="card">
+          <h2>No third-party services</h2>
+          <p>
+            The app contains no user account, no advertising, no analytics or audience
+            measurement tool, and no third-party service. It makes no network requests.
+          </p>
+        </section>
 
-      <section class="card">
-        <h2>Face ID et notifications</h2>
-        <p>
-          Face ID ou le code de l'appareil servent uniquement, sur ton téléphone et via
-          l'API du système, à protéger l'affichage du schéma retrouvé. Ariane n'a jamais
-          accès à tes données biométriques.
-        </p>
-        <p>
-          Les rappels sont des notifications locales, programmées sur ton téléphone. Aucun
-          serveur n'intervient.
-        </p>
-      </section>
+        <section class="card">
+          <h2>Face ID and notifications</h2>
+          <p>
+            Face ID or the device passcode is used only, on your phone and through the
+            system API, to protect the display of the recovered pattern. Ariane never has
+            access to your biometric data.
+          </p>
+          <p>
+            Reminders are local notifications, scheduled on your phone. No server is
+            involved.
+          </p>
+        </section>
 
-      <section class="card">
-        <h2>Suppression et contact</h2>
-        <p>Supprimer l'application supprime définitivement toutes ses données.</p>
-        <p>Pour toute question sur cette politique :</p>
-        <a class="contact" href="mailto:martin.cornumansuy@gmail.com">martin.cornumansuy@gmail.com</a>
-        <p style="margin-top: 14px">Dernière mise à jour : novembre 2026.</p>
-      </section>
+        <section class="card">
+          <h2>Deletion and contact</h2>
+          <p>Deleting the app permanently deletes all of its data.</p>
+          <p>For any question about this policy:</p>
+          <a class="contact" href="mailto:martin.cornumansuy@gmail.com">martin.cornumansuy@gmail.com</a>
+          <p style="margin-top: 14px">Last updated: November 2026.</p>
+        </section>
 
-      <footer>
-        <a href="index.html">Aide et contact</a>
-      </footer>
+        <footer>
+          <a href="index.html?lang=en">Help and contact</a>
+          <span aria-hidden="true">·</span>
+          <a href="?lang=fr" hreflang="fr" lang="fr">Français</a>
+        </footer>
+      </div>
+
+      <div lang="fr">
+        <header>
+          <img src="img/icon.png" alt="" />
+          <div>
+            <h1>Confidentialité</h1>
+            <p class="tagline">Tes fils restent chez toi</p>
+          </div>
+        </header>
+
+        <section class="card">
+          <h2>Ariane ne collecte aucune donnée</h2>
+          <p>
+            Toutes les informations saisies dans l'application (appareils, schémas, critères,
+            réglages) sont stockées exclusivement sur ton téléphone et ne le quittent jamais.
+          </p>
+          <p>
+            Elles sont chiffrées en AES-256-GCM par le système iOS. La clé de chiffrement est
+            gardée dans le trousseau sécurisé de l'iPhone.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Aucun service tiers</h2>
+          <p>
+            L'application ne contient ni compte utilisateur, ni publicité, ni outil d'analyse
+            ou de mesure d'audience, ni service tiers. Elle n'effectue aucune requête réseau.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Face ID et notifications</h2>
+          <p>
+            Face ID ou le code de l'appareil servent uniquement, sur ton téléphone et via
+            l'API du système, à protéger l'affichage du schéma retrouvé. Ariane n'a jamais
+            accès à tes données biométriques.
+          </p>
+          <p>
+            Les rappels sont des notifications locales, programmées sur ton téléphone. Aucun
+            serveur n'intervient.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Suppression et contact</h2>
+          <p>Supprimer l'application supprime définitivement toutes ses données.</p>
+          <p>Pour toute question sur cette politique :</p>
+          <a class="contact" href="mailto:martin.cornumansuy@gmail.com">martin.cornumansuy@gmail.com</a>
+          <p style="margin-top: 14px">Dernière mise à jour : novembre 2026.</p>
+        </section>
+
+        <footer>
+          <a href="index.html?lang=fr">Aide et contact</a>
+          <span aria-hidden="true">·</span>
+          <a href="?lang=en" hreflang="en" lang="en">English</a>
+        </footer>
+      </div>
     </main>
   </body>
 </html>

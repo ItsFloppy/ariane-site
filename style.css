@@ -150,3 +150,14 @@ footer {
 footer a {
   color: var(--muted);
 }
+
+footer span {
+  margin: 0 6px;
+}
+
+/* Each page carries both languages; the <head> script picks one by setting
+   <html lang>. Without the script, the English stays. */
+html:not([lang='fr']) div[lang='fr'],
+html[lang='fr'] div[lang='en'] {
+  display: none;
+}

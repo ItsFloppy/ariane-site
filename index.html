@@ -1,86 +1,175 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ariane, aide et contact</title>
+    <title>Ariane, help and contact</title>
     <meta
       name="description"
-      content="Ariane, le carnet du schéma oublié : aide, questions fréquentes et contact."
+      content="Ariane, the forgotten pattern notebook: help, frequently asked questions and contact."
     />
     <link rel="icon" href="img/icon.png" />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      // Same rule as the app: French when the browser's first language is
+      // French, English otherwise. ?lang=fr|en (the app's links, the footer
+      // switch) wins.
+      (function () {
+        var asked = new URLSearchParams(location.search).get('lang');
+        var first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        var lang = asked === 'fr' || asked === 'en' ? asked : /^fr\b/i.test(first) ? 'fr' : 'en';
+        document.documentElement.lang = lang;
+        if (lang === 'fr') document.title = 'Ariane, aide et contact';
+      })();
+    </script>
   </head>
   <body>
     <main>
-      <header>
-        <img src="img/icon.png" alt="" />
-        <div>
-          <h1>Ariane</h1>
-          <p class="tagline">Le carnet du schéma oublié</p>
-        </div>
-      </header>
+      <div lang="en">
+        <header>
+          <img src="img/icon.png" alt="" />
+          <div>
+            <h1>Ariane</h1>
+            <p class="tagline">The forgotten pattern notebook</p>
+          </div>
+        </header>
 
-      <section class="card">
-        <h2>À quoi sert Ariane ?</h2>
-        <p>
-          Tu as oublié le schéma de déverrouillage de ton propre téléphone ? Ariane t'aide
-          à le retrouver, méthodiquement et sans stress : tu notes tes idées de schémas, tu
-          les testes à ton rythme sur ton téléphone, et Ariane suit le délai d'attente
-          entre deux essais.
-        </p>
-        <p>
-          Ariane est un carnet : elle ne déverrouille aucun appareil et ne se connecte à
-          rien.
-        </p>
-      </section>
+        <section class="card">
+          <h2>What is Ariane for?</h2>
+          <p>
+            Forgot the unlock pattern of your own phone? Ariane helps you find it again,
+            methodically and stress-free: you write down your pattern ideas, you test them
+            at your own pace on your phone, and Ariane keeps track of the wait between two
+            attempts.
+          </p>
+          <p>
+            Ariane is a notebook: it does not unlock any device and does not connect to
+            anything.
+          </p>
+        </section>
 
-      <section class="card">
-        <h2>Questions fréquentes</h2>
+        <section class="card">
+          <h2>Frequently asked questions</h2>
 
-        <h3>Ariane peut-elle déverrouiller mon téléphone ?</h3>
-        <p>
-          Non. Ariane n'a aucun lien avec ton téléphone verrouillé. C'est toi qui essaies
-          les schémas, à la main. Ariane t'aide seulement à t'en souvenir et à t'organiser.
-        </p>
+          <h3>Can Ariane unlock my phone?</h3>
+          <p>
+            No. Ariane has no link to your locked phone. You are the one who tries the
+            patterns, by hand. Ariane only helps you remember them and stay organized.
+          </p>
 
-        <h3>Où sont stockées mes données ?</h3>
-        <p>
-          Uniquement sur ton iPhone, chiffrées. Rien n'est envoyé sur internet : il n'y a
-          ni compte, ni serveur, ni publicité. Les détails sont dans la
-          <a href="confidentialite.html">politique de confidentialité</a>.
-        </p>
+          <h3>Where is my data stored?</h3>
+          <p>
+            Only on your iPhone, encrypted. Nothing is sent over the internet: there is no
+            account, no server and no advertising. The details are in the
+            <a href="confidentialite.html?lang=en">privacy policy</a>.
+          </p>
 
-        <h3>Je ne reçois pas le rappel des 24h</h3>
-        <p>
-          Vérifie que les notifications sont autorisées : Réglages de l'iPhone, puis
-          Notifications, puis Ariane. Le rappel n'est prévu qu'après un essai raté, quand
-          le compte à rebours est lancé.
-        </p>
+          <h3>I don't get the 24h reminder</h3>
+          <p>
+            Check that notifications are allowed: iPhone Settings, then Notifications, then
+            Ariane. The reminder is only scheduled after a failed attempt, once the countdown
+            has started.
+          </p>
 
-        <h3>Mon schéma retrouvé est flouté</h3>
-        <p>
-          C'est voulu : il est protégé par Face ID ou ton code. Touche-le pour le révéler.
-          Tu peux désactiver cette protection dans les réglages d'Ariane (« Protéger les
-          schémas »).
-        </p>
+          <h3>My recovered pattern is blurred</h3>
+          <p>
+            That's on purpose: it is protected by Face ID or your passcode. Tap it to reveal
+            it. You can turn this protection off in Ariane's settings ("Protect
+            patterns").
+          </p>
 
-        <h3>Que se passe-t-il si je supprime l'app ?</h3>
-        <p>
-          Ses données sont effacées de ton iPhone. Comme elles ne sont jamais envoyées
-          ailleurs, Ariane ne peut pas les récupérer pour toi.
-        </p>
-      </section>
+          <h3>What happens if I delete the app?</h3>
+          <p>
+            Its data is erased from your iPhone. Since it is never sent anywhere else, Ariane
+            cannot recover it for you.
+          </p>
+        </section>
 
-      <section class="card">
-        <h2>Une question, un souci ?</h2>
-        <p>Écris-moi, je réponds personnellement.</p>
-        <a class="contact" href="mailto:martin.cornumansuy@gmail.com">martin.cornumansuy@gmail.com</a>
-      </section>
+        <section class="card">
+          <h2>A question, a problem?</h2>
+          <p>Write to me, I answer personally.</p>
+          <a class="contact" href="mailto:martin.cornumansuy@gmail.com">martin.cornumansuy@gmail.com</a>
+        </section>
 
-      <footer>
-        <a href="confidentialite.html">Politique de confidentialité</a>
-      </footer>
+        <footer>
+          <a href="confidentialite.html?lang=en">Privacy policy</a>
+          <span aria-hidden="true">·</span>
+          <a href="?lang=fr" hreflang="fr" lang="fr">Français</a>
+        </footer>
+      </div>
+
+      <div lang="fr">
+        <header>
+          <img src="img/icon.png" alt="" />
+          <div>
+            <h1>Ariane</h1>
+            <p class="tagline">Le carnet du schéma oublié</p>
+          </div>
+        </header>
+
+        <section class="card">
+          <h2>À quoi sert Ariane ?</h2>
+          <p>
+            Tu as oublié le schéma de déverrouillage de ton propre téléphone ? Ariane t'aide
+            à le retrouver, méthodiquement et sans stress : tu notes tes idées de schémas, tu
+            les testes à ton rythme sur ton téléphone, et Ariane suit le délai d'attente
+            entre deux essais.
+          </p>
+          <p>
+            Ariane est un carnet : elle ne déverrouille aucun appareil et ne se connecte à
+            rien.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Questions fréquentes</h2>
+
+          <h3>Ariane peut-elle déverrouiller mon téléphone ?</h3>
+          <p>
+            Non. Ariane n'a aucun lien avec ton téléphone verrouillé. C'est toi qui essaies
+            les schémas, à la main. Ariane t'aide seulement à t'en souvenir et à t'organiser.
+          </p>
+
+          <h3>Où sont stockées mes données ?</h3>
+          <p>
+            Uniquement sur ton iPhone, chiffrées. Rien n'est envoyé sur internet : il n'y a
+            ni compte, ni serveur, ni publicité. Les détails sont dans la
+            <a href="confidentialite.html?lang=fr">politique de confidentialité</a>.
+          </p>
+
+          <h3>Je ne reçois pas le rappel des 24h</h3>
+          <p>
+            Vérifie que les notifications sont autorisées : Réglages de l'iPhone, puis
+            Notifications, puis Ariane. Le rappel n'est prévu qu'après un essai raté, quand
+            le compte à rebours est lancé.
+          </p>
+
+          <h3>Mon schéma retrouvé est flouté</h3>
+          <p>
+            C'est voulu : il est protégé par Face ID ou ton code. Touche-le pour le révéler.
+            Tu peux désactiver cette protection dans les réglages d'Ariane (« Protéger les
+            schémas »).
+          </p>
+
+          <h3>Que se passe-t-il si je supprime l'app ?</h3>
+          <p>
+            Ses données sont effacées de ton iPhone. Comme elles ne sont jamais envoyées
+            ailleurs, Ariane ne peut pas les récupérer pour toi.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Une question, un souci ?</h2>
+          <p>Écris-moi, je réponds personnellement.</p>
+          <a class="contact" href="mailto:martin.cornumansuy@gmail.com">martin.cornumansuy@gmail.com</a>
+        </section>
+
+        <footer>
+          <a href="confidentialite.html?lang=fr">Politique de confidentialité</a>
+          <span aria-hidden="true">·</span>
+          <a href="?lang=en" hreflang="en" lang="en">English</a>
+        </footer>
+      </div>
     </main>
   </body>
 </html>
