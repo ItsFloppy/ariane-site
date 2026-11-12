@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'Baloo 2';
+  src: url('fonts/Baloo2_400Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Baloo 2';
+  src: url('fonts/Baloo2_700Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Caveat';
+  src: url('fonts/Caveat_700Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --paper: #faf7f2;
+  --ink: #3e3a4e;
+  --body: #6b667e;
+  --muted: #8a8497;
+  --violet: #8b7ec8;
+  --violet-text: #6c60a8;
+  --lavender: #efeaf8;
+  --seam: #cfc4ea;
+  --card: #fffdf9;
+  --apricot: #f2b98a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper) url('img/paper.png') repeat;
+  background-size: 256px 256px;
+  color: var(--body);
+  font-family: 'Baloo 2', system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px 16px 56px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+header img {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(62, 58, 78, 0.14);
+}
+
+h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.tagline {
+  margin: 2px 0 0;
+  color: var(--violet-text);
+  font-family: 'Caveat', cursive;
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+/* A card of warm stock with a dashed seam stitched just inside its edge. */
+.card {
+  position: relative;
+  margin: 0 0 22px;
+  padding: 22px 22px 18px;
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: 0 3px 12px rgba(62, 58, 78, 0.08);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1.5px dashed var(--seam);
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+h2 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+h3 {
+  margin: 18px 0 2px;
+  color: var(--ink);
+  font-size: 17px;
+}
+
+p,
+ul {
+  margin: 0 0 10px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+a {
+  color: var(--violet-text);
+  text-decoration-color: var(--violet);
+  text-underline-offset: 3px;
+}
+
+.contact {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 8px 16px;
+  background: var(--lavender);
+  border: 1.5px dashed var(--violet);
+  border-radius: 999px;
+  color: var(--violet-text);
+  font-weight: 700;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+footer a {
+  color: var(--muted);
+}
